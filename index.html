@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神马影院在线观看免费完整版-免费电影电视剧高清在线观看_神马影院手机版入口</title>
+<meta name="description" content="神马影院在线观看免费完整版，提供电影、电视剧、综艺、动漫等高清内容免费在线观看入口，无需注册，手机与电脑均可直接进入播放页面，支持片库分类浏览与关键词搜索。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M24 18l24 14-24 14z' fill='%23f5b942'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0d1117;
+  --ink-2:#151c26;
+  --line:rgba(255,255,255,.09);
+  --text:#e8ecf2;
+  --muted:#9aa7b8;
+  --gold:#f5b942;
+  --gold-soft:rgba(245,185,66,.12);
+  --radius:16px;
+  --maxw:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:24px;
+  height:68px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,#1c2634,#0d1117);
+  border:1px solid var(--line);
+  display:grid;place-items:center;
+}
+.brand-name{
+  font-size:15px;font-weight:700;letter-spacing:.2px;
+  color:#fff;line-height:1.3;max-width:230px;
+}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main-nav a{
+  font-size:14px;color:var(--muted);
+  padding:8px 12px;border-radius:9px;transition:.2s;
+}
+nav.main-nav a:hover{color:var(--gold);background:var(--gold-soft)}
+.header-cta{
+  font-size:13.5px;font-weight:600;
+  background:var(--gold);color:#161a20;
+  padding:9px 16px;border-radius:10px;
+  white-space:nowrap;transition:.2s;
+}
+.header-cta:hover{background:#ffc95c}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(760px 340px at 82% -12%,rgba(245,185,66,.16),transparent 70%),
+    radial-gradient(600px 300px at 8% 110%,rgba(64,116,255,.13),transparent 70%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:48px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.12em;color:var(--gold);
+  border:1px solid rgba(245,185,66,.32);
+  background:var(--gold-soft);
+  padding:5px 12px;border-radius:999px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(26px,3.4vw,42px);
+  line-height:1.28;font-weight:800;letter-spacing:.5px;
+  color:#fff;
+}
+.hero-lead{
+  margin-top:18px;font-size:15.5px;color:var(--muted);
+  max-width:560px;
+}
+.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14.5px;font-weight:600;
+  padding:12px 22px;border-radius:11px;transition:.2s;
+}
+.btn-primary{background:var(--gold);color:#161a20}
+.btn-primary:hover{background:#ffc95c;transform:translateY(-1px)}
+.btn-ghost{
+  border:1px solid var(--line);color:var(--text);
+  background:rgba(255,255,255,.03);
+}
+.btn-ghost:hover{border-color:rgba(245,185,66,.5);color:var(--gold)}
+.hero-stats{
+  display:flex;gap:28px;margin-top:34px;flex-wrap:wrap;
+  padding-top:24px;border-top:1px solid var(--line);
+}
+.hero-stats div strong{display:block;font-size:20px;color:#fff;font-weight:700}
+.hero-stats div span{font-size:12.5px;color:var(--muted)}
+
+/* poster collage */
+.poster-board{
+  position:relative;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
+.poster{
+  border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(160deg,#1a2331,#10151d);
+  aspect-ratio:3/4;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:14px;position:relative;
+  transition:.25s;
+}
+.poster:nth-child(1){transform:translateY(-14px)}
+.poster:nth-child(3){transform:translateY(-14px)}
+.poster:hover{border-color:rgba(245,185,66,.45)}
+.poster .tag{
+  font-size:11px;color:var(--gold);
+  border:1px solid rgba(245,185,66,.35);
+  border-radius:6px;padding:1px 7px;align-self:flex-start;margin-bottom:8px;
+  background:rgba(13,17,23,.6);
+}
+.poster .name{font-size:13.5px;font-weight:600;color:#fff;line-height:1.4}
+.poster .meta{font-size:11.5px;color:var(--muted);margin-top:3px}
+.poster-art{
+  position:absolute;inset:0;
+  opacity:.55;
+}
+
+/* ---------- section base ---------- */
+section{padding:60px 0}
+.section-head{margin-bottom:32px;max-width:720px}
+.section-head h2{
+  font-size:clamp(20px,2.2vw,26px);font-weight:700;color:#fff;
+  letter-spacing:.3px;
+}
+.section-head p{margin-top:10px;font-size:14.5px;color:var(--muted)}
+.kicker{
+  font-size:12.5px;letter-spacing:.14em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:10px;font-weight:600;
+}
+
+/* search */
+.search-bar{
+  display:flex;gap:10px;margin-top:24px;max-width:560px;
+}
+.search-bar input{
+  flex:1;min-width:0;
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:12px 16px;
+  color:var(--text);font-size:14.5px;
+  font-family:inherit;
+  outline:none;transition:.2s;
+}
+.search-bar input::placeholder{color:#6b7889}
+.search-bar input:focus{border-color:rgba(245,185,66,.55)}
+.search-bar button{
+  background:var(--gold);color:#161a20;border:none;
+  font-size:14.5px;font-weight:600;font-family:inherit;
+  padding:0 22px;border-radius:11px;cursor:pointer;transition:.2s;
+}
+.search-bar button:hover{background:#ffc95c}
+.search-note{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* category grid */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.cat-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 20px;
+  background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  transition:.22s;
+}
+.cat-card:hover{border-color:rgba(245,185,66,.4);transform:translateY(-3px)}
+.cat-card .ico{
+  width:40px;height:40px;border-radius:11px;
+  background:var(--gold-soft);
+  display:grid;place-items:center;margin-bottom:14px;
+}
+.cat-card h3{font-size:15.5px;font-weight:600;color:#fff;margin-bottom:6px}
+.cat-card p{font-size:13px;color:var(--muted);line-height:1.65}
+.cat-card .count{
+  display:block;margin-top:12px;font-size:12.5px;color:var(--gold);
+}
+
+/* hot list */
+.hot-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:28px}
+.hot-list{display:flex;flex-direction:column;gap:10px}
+.hot-item{
+  display:flex;align-items:center;gap:16px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:14px 18px;
+  background:rgba(255,255,255,.022);
+  transition:.2s;
+}
+.hot-item:hover{border-color:rgba(245,185,66,.4);background:rgba(245,185,66,.05)}
+.rank{
+  font-size:15px;font-weight:800;color:#3c4757;
+  width:26px;flex-shrink:0;font-variant-numeric:tabular-nums;
+}
+.hot-item:nth-child(-n+3) .rank{color:var(--gold)}
+.hot-item .info{flex:1;min-width:0}
+.hot-item .title{font-size:14.5px;font-weight:600;color:#fff}
+.hot-item .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.hot-item .badge{
+  font-size:11.5px;color:var(--gold);
+  border:1px solid rgba(245,185,66,.3);
+  padding:2px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0;
+}
+.side-panel{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  background:linear-gradient(170deg,rgba(245,185,66,.07),rgba(255,255,255,.015));
+  height:100%;
+}
+.side-panel h3{font-size:16px;color:#fff;margin-bottom:14px;font-weight:700}
+.side-panel ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.side-panel li{font-size:13.5px;color:var(--muted);display:flex;gap:9px;line-height:1.6}
+.side-panel li::before{
+  content:"";width:5px;height:5px;border-radius:50%;
+  background:var(--gold);margin-top:9px;flex-shrink:0;
+}
+
+/* article body */
+.article-block{max-width:820px}
+.article-block h2{font-size:clamp(20px,2.2vw,25px);color:#fff;font-weight:700;margin-bottom:18px}
+.article-block p{font-size:15px;color:#c3ccd8;margin-bottom:16px;line-height:1.85}
+.article-block p strong{color:#fff;font-weight:600}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.step{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;background:rgba(255,255,255,.025);
+}
+.step .num{
+  font-size:12.5px;font-weight:700;color:#161a20;
+  background:var(--gold);width:26px;height:26px;border-radius:8px;
+  display:grid;place-items:center;margin-bottom:14px;
+}
+.step h3{font-size:15px;color:#fff;margin-bottom:7px;font-weight:600}
+.step p{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* faq */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:820px}
+.faq details{
+  border:1px solid var(--line);border-radius:13px;
+  background:rgba(255,255,255,.022);
+  padding:0 20px;
+}
+.faq details[open]{border-color:rgba(245,185,66,.35)}
+.faq summary{
+  cursor:pointer;list-style:none;
+  font-size:14.5px;font-weight:600;color:#fff;
+  padding:17px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";color:var(--gold);font-size:19px;font-weight:400;line-height:1;
+}
+.faq details[open] summary::after{content:"−"}
+.faq .answer{
+  font-size:14px;color:var(--muted);
+  padding-bottom:18px;line-height:1.8;
+}
+
+/* download */
+.dl-panel{
+  display:flex;align-items:center;justify-content:space-between;gap:28px;
+  border:1px solid rgba(245,185,66,.28);
+  border-radius:20px;
+  padding:32px 36px;
+  background:
+    radial-gradient(420px 200px at 88% 0%,rgba(245,185,66,.18),transparent 70%),
+    linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+  flex-wrap:wrap;
+}
+.dl-panel h2{font-size:20px;color:#fff;font-weight:700;margin-bottom:8px}
+.dl-panel p{font-size:14px;color:var(--muted);max-width:520px}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--gold);color:#161a20;
+  font-size:15px;font-weight:700;
+  padding:13px 30px;border-radius:12px;
+  pointer-events:none;opacity:.85;
+}
+
+/* footer */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding:44px 0 32px;
+  margin-top:20px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  padding-bottom:26px;border-bottom:1px solid var(--line);
+}
+.footer-brand{max-width:420px}
+.footer-brand .brand-name{margin-top:12px;display:block}
+.footer-brand p{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.7}
+.footer-links{display:flex;gap:56px;flex-wrap:wrap}
+.footer-col h4{font-size:13.5px;color:#fff;margin-bottom:12px;font-weight:600}
+.footer-col a{display:block;font-size:13px;color:var(--muted);margin-bottom:9px;transition:.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{
+  padding-top:22px;font-size:12.5px;color:#6b7889;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* responsive */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .poster-board{max-width:400px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .hot-layout{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .header-inner{height:auto;padding:12px 0;flex-wrap:wrap;gap:10px}
+  nav.main-nav{margin-left:0;order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  nav.main-nav a{white-space:nowrap;font-size:13.5px;padding:7px 11px}
+  .header-cta{margin-left:auto}
+  .brand-name{font-size:13.5px;max-width:190px}
+  .hero{padding:44px 0 40px}
+  section{padding:44px 0}
+  .cat-grid{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  .dl-panel{padding:26px 22px}
+  .footer-links{gap:32px}
+  .search-bar{flex-direction:column}
+  .search-bar button{padding:12px 22px}
+  .poster:nth-child(1),.poster:nth-child(3){transform:none}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="神马影院在线观看免费完整版 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M8 5.5l11 6.5-11 6.5z" fill="#f5b942"/>
+        </svg>
+      </span>
+      <span class="brand-name">神马影院在线观看免费完整版</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#library">片库分类</a>
+      <a href="#hot">热播榜单</a>
+      <a href="#play">观看方式</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">客户端</a>
+    </nav>
+    <a class="header-cta" href="#library">立即进入片库</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">免费 · 高清 · 免注册</span>
+        <h1>神马影院在线观看免费完整版</h1>
+        <p class="hero-lead">
+          打开页面就能选片，神马影院在线观看免费完整版把电影、电视剧、综艺与动漫集中在一个片库里。不用注册账号，不用安装插件，点击海报即可进入播放页，手机和电脑都能顺畅浏览。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
+            进入片库选片
+          </a>
+          <a class="btn btn-ghost" href="#hot">查看今日热播</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4 大分类</strong><span>电影 / 剧集 / 综艺 / 动漫</span></div>
+          <div><strong>免注册</strong><span>打开即看，无需登录</span></div>
+          <div><strong>多端适配</strong><span>手机、平板、电脑通用</span></div>
+        </div>
+      </div>
+
+      <div class="poster-board" aria-hidden="true">
+        <div class="poster">
+          <svg class="poster-art" viewBox="0 0 100 133" preserveAspectRatio="none">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3c55"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+            <rect width="100" height="133" fill="url(#g1)"/>
+            <circle cx="72" cy="34" r="20" fill="#f5b942" opacity=".22"/>
+          </svg>
+          <span class="tag">电影</span>
+          <span class="name">院线新片专区</span>
+          <span class="meta">高清 · 中文字幕</span>
+        </div>
+        <div class="poster">
+          <svg class="poster-art" viewBox="0 0 100 133" preserveAspectRatio="none">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2b4a"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+            <rect width="100" height="133" fill="url(#g2)"/>
+            <circle cx="28" cy="98" r="24" fill="#6f8cff" opacity=".2"/>
+          </svg>
+          <span class="tag">剧集</span>
+          <span class="name">连续剧连播</span>
+          <span class="meta">全集 · 追剧不断更</span>
+        </div>
+        <div class="poster">
+          <svg class="poster-art" viewBox="0 0 100 133" preserveAspectRatio="none">
+            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24402f"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+            <rect width="100" height="133" fill="url(#g3)"/>
+            <circle cx="70" cy="70" r="22" fill="#4ad18a" opacity=".18"/>
+          </svg>
+          <span class="tag">综艺</span>
+          <span class="name">热门综艺合集</span>
+          <span class="meta">每周更新</span>
+        </div>
+        <div class="poster">
+          <svg class="poster-art" viewBox="0 0 100 133" preserveAspectRatio="none">
+            <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a2a2a"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+            <rect width="100" height="133" fill="url(#g4)"/>
+            <circle cx="30" cy="40" r="18" fill="#f57a42" opacity=".2"/>
+          </svg>
+          <span class="tag">动漫</span>
+          <span class="name">动画番剧</span>
+          <span class="meta">国语 / 日语</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY / SEARCH -->
+  <section id="library">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">片库分类</div>
+        <h2>按类型挑片，比翻列表更快</h2>
+        <p>神马影院在线观看免费完整版的片库按内容类型划分，每一类都是一个独立入口。想找具体片名，可以直接在下方搜索框里输入关键词。</p>
+      </div>
+
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f5b942" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z" fill="#f5b942" stroke="none"/></svg>
+          </div>
+          <h3>电影</h3>
+          <p>院线新片、经典老片、动作与悬疑等题材分类，按年份和地区进一步筛选。</p>
+          <span class="count">支持按地区 · 年份浏览</span>
+        </article>
+        <article class="cat-card">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f5b942" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M7 6v12M17 6v12"/></svg>
+          </div>
+          <h3>电视剧</h3>
+          <p>国产剧、港台剧、日韩剧与欧美剧分区陈列，连载剧集按集数顺序排列。</p>
+          <span class="count">连载剧集逐集更新</span>
+        </article>
+        <article class="cat-card">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f5b942" stroke-width="1.8"><path d="M4 18V9M9 18V6M14 18v-5M19 18v-9"/></svg>
+          </div>
+          <h3>综艺</h3>
+          <p>季播综艺、访谈与真人秀节目，按播出时间排列，方便跟进最新一期。</p>
+          <span class="count">按播出时间排序</span>
+        </article>
+        <article class="cat-card">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f5b942" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>动漫</h3>
+          <p>国漫与日漫番剧、剧场版动画，标注语言版本与更新进度。</p>
+          <span class="count">国语 / 日语双版本</span>
+        </article>
+      </div>
+
+      <form class="search-bar" role="search" onsubmit="event.preventDefault();doSearch();">
+        <input id="q" type="search" placeholder="输入片名、演员或关键词，例如：动作片" aria-label="搜索片名">
+        <button type="submit">搜索</button>
+      </form>
+      <p class="search-note" id="search-note">搜索结果为站内片库分类提示，点击后前往对应栏目浏览。</p>
+    </div>
+  </section>
+
+  <!-- HOT LIST -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">热播榜单</div>
+        <h2>最近被点开最多的几个入口</h2>
+        <p>榜单按片库栏目的访问热度排列，反映的是浏览偏好，而非平台评分。神马影院在线观看免费完整版的推荐逻辑以「好找、好点、好继续看」为主。</p>
+      </div>
+
+      <div class="hot-layout">
+        <div class="hot-list">
+          <a class="hot-item" href="#library">
+            <span class="rank">1</span>
+            <span class="info"><span class="title">动作与悬疑电影</span><span class="sub">紧凑节奏、单部时长完整，适合一次看完</span></span>
+            <span class="badge">热门</span>
+          </a>
+          <a class="hot-item" href="#library">
+            <span class="rank">2</span>
+            <span class="info"><span class="title">国产连续剧</span><span class="sub">集数多、更新稳定，适合长期追看</span></span>
+            <span class="badge">连载</span>
+          </a>
+          <a class="hot-item" href="#library">
+            <span class="rank">3</span>
+            <span class="info"><span class="title">季播综艺</span><span class="sub">按周更新，单期时长轻松</span></span>
+            <span class="badge">更新快</span>
+          </a>
+          <a class="hot-item" href="#library">
+            <span class="rank">4</span>
+            <span class="info"><span class="title">番剧动画</span><span class="sub">国语配音与日语原声可切换</span></span>
+            <span class="badge">新番</span>
+          </a>
+          <a class="hot-item" href="#library">
+            <span class="rank">5</span>
+            <span class="info"><span class="title">经典老片回顾</span><span class="sub">画质修复版本，适合重温</span></span>
+            <span class="badge">经典</span>
+          </a>
+        </div>
+
+        <aside class="side-panel">
+          <h3>选片前的三个提示</h3>
+          <ul>
+            <li>先在分类里定方向，再用搜索框定位具体片名，比逐页翻更省时间。</li>
+            <li>连载剧集从第一集开始看，播放页会按顺序排列后续集数。</li>
+            <li>页面本身不要求登录，浏览记录保存在本地浏览器，换设备不会同步。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO WATCH -->
+  <section id="play">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">观看方式</div>
+        <h2>三步进入播放页</h2>
+        <p>神马影院在线观看免费完整版的使用路径尽量短：选分类、点海报、进播放页。全程不需要填写手机号或创建账号。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>选分类或搜索</h3>
+          <p>从电影、电视剧、综艺、动漫四个入口进入，或在搜索框输入片名关键词，直接缩小范围。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>点击海报进入详情</h3>
+          <p>详情页列出简介、年份、地区与集数信息，连载内容会显示当前更新进度。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>在播放页选集观看</h3>
+          <p>播放页提供清晰度与集数切换，手机横屏后自动适配画面比例，观看过程无需额外操作。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL -->
+  <section>
+    <div class="wrap article-block">
+      <div class="kicker">使用说明</div>
+      <h2>为什么很多人习惯从首页直接进片库</h2>
+      <p>
+        影视站点的首页往往承担两个任务：一是让人快速知道「这里有什么」，二是把想看的片子送到播放页。神马影院在线观看免费完整版把这两件事压在前两屏完成——上半部分是分类入口与热播入口，下半部分是搜索与说明，不需要滚过大量广告位才能找到内容。
+      </p>
+      <p>
+        <strong>分类优先，搜索兜底。</strong>当你不确定看什么时，按类型浏览更容易做决定；当你已经知道片名，搜索框一次输入就能定位。两种方式互补，这也是本页把分类卡片和搜索框放在同一区域的原因。
+      </p>
+      <p>
+        <strong>关于「免费完整版」的说明。</strong>页面提供的是免费观看入口与片库导航，实际可播放内容取决于片库收录情况，部分新片可能只有预告或尚未收录。站内不承诺所有影片同步上线，也不以「全网最全」作为描述，遇到缺失内容可通过反馈入口告知。
+      </p>
+      <p>
+        如果你在手机端使用神马影院在线观看免费完整版，建议把页面加入浏览器书签或桌面快捷方式，下次直接打开，省去重新搜索的步骤。桌面端则可以直接收藏片库地址，按分类固定访问。
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">常见问题</div>
+        <h2>访问前你可能想确认的几件事</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>看片需要注册或付费吗？</summary>
+          <div class="answer">不需要注册账号即可浏览片库并进入播放页。页面本身不设置会员门槛，也不要求绑定手机号。若后续出现付费内容，会在详情页单独标注，不影响免费栏目的浏览。</div>
+        </details>
+        <details>
+          <summary>手机上打不开或加载慢怎么办？</summary>
+          <div class="answer">先确认网络状态，再尝试切换浏览器或刷新页面。部分运营商网络对视频域名解析较慢，可以换用 Wi-Fi 或移动数据对比。若长时间无响应，可稍后重试，页面本身不依赖插件运行。</div>
+        </details>
+        <details>
+          <summary>为什么搜索不到某部新片？</summary>
+          <div class="answer">片库收录存在时间差，院线新片通常需要等待一段时间才会进入分类。搜索无结果时，可以先查看对应分类的最新列表，或在反馈入口提交片名，便于后续补充。</div>
+        </details>
+        <details>
+          <summary>播放记录会自动保存吗？</summary>
+          <div class="answer">浏览与播放记录保存在当前浏览器的本地存储中，清除浏览器数据后会丢失，也不会跨设备同步。这属于本地记录，不涉及账号体系。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl-panel">
+        <div>
+          <h2>神马影院在线观看免费完整版客户端</h2>
+          <p>客户端把片库、搜索与播放页收进一个入口，减少浏览器反复输入网址的步骤，适合固定设备长期使用。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11M7 12l5 5 5-5M5 20h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5.5l11 6.5-11 6.5z" fill="#f5b942"/></svg>
+          </span>
+          <span class="brand-name">神马影院在线观看免费完整版</span>
+        </a>
+        <p>免费影视片库导航首页，集中呈现电影、电视剧、综艺与动漫分类入口，提供免注册的在线观看路径。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>片库</h4>
+          <a href="#library">电影</a>
+          <a href="#library">电视剧</a>
+          <a href="#library">综艺</a>
+          <a href="#library">动漫</a>
+        </div>
+        <div class="footer-col">
+          <h4>使用</h4>
+          <a href="#play">观看方式</a>
+          <a href="#hot">热播榜单</a>
+          <a href="#faq">常见问题</a>
+          <a href="#download">客户端</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>神马影院在线观看免费完整版 · 页面内容以站内片库实际收录为准</span>
+      <span>浏览记录仅保存在本地浏览器</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function doSearch(){
+  var q = document.getElementById('q').value.trim();
+  var note = document.getElementById('search-note');
+  if(!q){
+    note.textContent = '请输入片名或关键词后再搜索。';
+    return;
+  }
+  note.textContent = '已记录关键词「' + q + '」，请在上方片库分类中查找对应内容，或稍后回到搜索框重新定位。';
+  document.getElementById('library').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+
+</body>
+  </html>
