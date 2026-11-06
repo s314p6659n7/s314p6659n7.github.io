@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>樱花动漫-在线追番_番剧目录与更新动态</title>
+<meta name="description" content="樱花动漫是面向动漫爱好者的番剧浏览与追番入口，按类型、季度与热度整理番剧目录，展示新番更新、经典合集与播放列表，帮助访客快速找到想看的动画。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f8c8d8'/%3E%3Cg fill='%23e8618c'%3E%3Cellipse cx='32' cy='26' rx='6' ry='10'/%3E%3Cellipse cx='32' cy='26' rx='10' ry='6'/%3E%3Cellipse cx='20' cy='34' rx='5' ry='8' transform='rotate(-40 20 34)'/%3E%3Cellipse cx='44' cy='34' rx='5' ry='8' transform='rotate(40 44 34)'/%3E%3C/g%3E%3Ccircle cx='32' cy='27' r='3.5' fill='%23fff3f7'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --pink:#e8618c;
+    --pink-soft:#fbe4ec;
+    --pink-deep:#b83e63;
+    --ink:#2c2430;
+    --ink-2:#5c5260;
+    --line:#f0dbe3;
+    --bg:#fffafc;
+    --card:#ffffff;
+    --shadow:0 8px 24px rgba(184,62,99,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,250,252,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;gap:18px;
+    height:64px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:9px;
+    font-size:19px;font-weight:800;letter-spacing:.5px;
+    color:var(--pink-deep);white-space:nowrap;
+  }
+  .logo .mark{width:30px;height:30px;flex:0 0 auto;}
+  .nav ul{
+    list-style:none;display:flex;gap:4px;margin-left:auto;
+  }
+  .nav ul a{
+    display:block;padding:7px 12px;border-radius:999px;
+    font-size:14.5px;color:var(--ink-2);
+    transition:.2s;
+  }
+  .nav ul a:hover{background:var(--pink-soft);color:var(--pink-deep);}
+  .nav .btn-watch{
+    padding:7px 16px;border-radius:999px;background:var(--pink);
+    color:#fff;font-size:14px;font-weight:600;
+  }
+  .nav .btn-watch:hover{background:var(--pink-deep);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:54px 0 48px;
+    background:
+      radial-gradient(circle at 88% 12%,rgba(232,97,140,.14),transparent 46%),
+      radial-gradient(circle at 6% 88%,rgba(248,200,216,.45),transparent 50%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(30px,4.6vw,46px);
+    line-height:1.2;font-weight:900;letter-spacing:1px;
+    color:var(--pink-deep);
+  }
+  .hero .lead{
+    margin-top:16px;font-size:16px;color:var(--ink-2);max-width:34em;
+  }
+  .hero .actions{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 26px;border-radius:999px;
+    background:var(--pink);color:#fff;font-weight:700;font-size:15px;
+    box-shadow:0 10px 22px rgba(232,97,140,.28);
+    transition:.2s;
+  }
+  .btn-primary:hover{background:var(--pink-deep);transform:translateY(-1px);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:999px;
+    border:1.5px solid var(--pink);color:var(--pink-deep);
+    font-weight:700;font-size:15px;background:#fff;transition:.2s;
+  }
+  .btn-ghost:hover{background:var(--pink-soft);}
+  .hero-figure{
+    background:linear-gradient(160deg,#fff,var(--pink-soft));
+    border-radius:26px;padding:18px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .hero-figure figcaption{
+    margin-top:12px;font-size:13px;color:var(--ink-2);text-align:center;
+  }
+  .hero-stats{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;
+  }
+  .hero-stats span{
+    font-size:13px;color:var(--pink-deep);
+    background:#fff;border:1px solid var(--line);
+    padding:5px 14px;border-radius:999px;
+  }
+
+  /* ---------- section base ---------- */
+  section{padding:52px 0;}
+  .sec-head{margin-bottom:28px;}
+  .sec-head .kicker{
+    font-size:13px;font-weight:700;letter-spacing:2px;
+    color:var(--pink);text-transform:uppercase;
+  }
+  .sec-head h2{
+    font-size:clamp(22px,3vw,28px);font-weight:800;margin-top:6px;
+    color:var(--ink);
+  }
+  .sec-head p{margin-top:8px;color:var(--ink-2);font-size:15px;max-width:46em;}
+
+  /* ---------- filter ---------- */
+  .filter-bar{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;
+  }
+  .filter-bar button{
+    font:inherit;font-size:14px;cursor:pointer;
+    padding:7px 18px;border-radius:999px;
+    border:1px solid var(--line);background:#fff;color:var(--ink-2);
+    transition:.2s;
+  }
+  .filter-bar button:hover{border-color:var(--pink);color:var(--pink-deep);}
+  .filter-bar button.on{
+    background:var(--pink);border-color:var(--pink);color:#fff;font-weight:600;
+  }
+  .empty-tip{
+    display:none;padding:22px;border-radius:14px;
+    background:var(--pink-soft);color:var(--pink-deep);font-size:14px;
+  }
+  .empty-tip.show{display:block;}
+
+  /* ---------- anime cards ---------- */
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+    transition:.22s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:#f2b8cb;}
+  .card .thumb{
+    aspect-ratio:16/9;
+    background:var(--pink-soft);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card h3{font-size:16.5px;font-weight:800;}
+  .card .meta{
+    font-size:12.5px;color:var(--pink-deep);font-weight:600;
+    display:flex;gap:8px;flex-wrap:wrap;
+  }
+  .card p{font-size:14px;color:var(--ink-2);flex:1;}
+  .card .tag{
+    align-self:flex-start;font-size:12px;color:var(--ink-2);
+    background:#fdf1f5;border-radius:6px;padding:2px 9px;
+  }
+
+  /* ---------- schedule ---------- */
+  .schedule{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  .day{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:16px 16px 18px;box-shadow:var(--shadow);
+  }
+  .day h3{
+    font-size:14px;font-weight:800;color:var(--pink-deep);
+    padding-bottom:8px;border-bottom:1px dashed var(--line);margin-bottom:10px;
+  }
+  .day ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .day li{font-size:13.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px;}
+  .day li em{font-style:normal;color:#b9aeb8;font-size:12px;white-space:nowrap;}
+
+  /* ---------- picks / article ---------- */
+  .picks{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start;
+  }
+  .article{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:30px 32px;box-shadow:var(--shadow);
+  }
+  .article h2{font-size:24px;font-weight:800;margin-bottom:14px;}
+  .article h3{font-size:17px;font-weight:800;margin:22px 0 8px;color:var(--pink-deep);}
+  .article p{font-size:15px;color:var(--ink-2);margin-bottom:12px;}
+  .list-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:24px 26px;box-shadow:var(--shadow);
+  }
+  .list-card h2{font-size:19px;font-weight:800;margin-bottom:6px;}
+  .list-card .sub{font-size:13px;color:var(--ink-2);margin-bottom:16px;}
+  .list-card ol{list-style:none;counter-reset:rk;display:flex;flex-direction:column;gap:14px;}
+  .list-card li{
+    counter-increment:rk;display:flex;gap:12px;align-items:flex-start;
+  }
+  .list-card li::before{
+    content:counter(rk);
+    flex:0 0 auto;width:24px;height:24px;border-radius:8px;
+    background:var(--pink-soft);color:var(--pink-deep);
+    font-size:13px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .list-card li b{display:block;font-size:14.5px;}
+  .list-card li span{font-size:13px;color:var(--ink-2);}
+
+  /* ---------- download ---------- */
+  .download{
+    background:linear-gradient(150deg,#fff4f8,#fde8f0);
+    border:1px solid var(--line);border-radius:24px;
+    padding:38px 34px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .download h2{font-size:23px;font-weight:800;color:var(--pink-deep);}
+  .download p{margin-top:10px;font-size:14.5px;color:var(--ink-2);max-width:40em;}
+  .btn-download{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 32px;border-radius:999px;
+    background:var(--pink-deep);color:#fff;font-weight:700;font-size:15px;
+    pointer-events:none;opacity:.85;
+  }
+
+  /* ---------- faq ---------- */
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .faq div{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;box-shadow:var(--shadow);
+  }
+  .faq h3{font-size:15.5px;font-weight:800;margin-bottom:8px;}
+  .faq p{font-size:14px;color:var(--ink-2);}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);background:#fff;
+    padding:34px 0 40px;margin-top:20px;
+  }
+  .foot{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-start;
+  }
+  .foot .logo{font-size:16px;}
+  .foot .logo .mark{width:24px;height:24px;}
+  .foot p{font-size:13px;color:var(--ink-2);max-width:44em;}
+  .foot nav{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-2);}
+  .foot nav a:hover{color:var(--pink-deep);}
+  .copyright{margin-top:20px;font-size:12.5px;color:#b3a7b0;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-figure{max-width:420px;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .schedule{grid-template-columns:repeat(2,1fr);}
+    .picks{grid-template-columns:1fr;}
+    .download{grid-template-columns:1fr;padding:30px 24px;}
+    .faq{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .nav{height:auto;flex-wrap:wrap;padding:10px 0;gap:10px;}
+    .nav ul{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:2px;}
+    .nav ul a{padding:6px 10px;font-size:13.5px;white-space:nowrap;}
+    .nav .btn-watch{margin-left:auto;}
+    .hero{padding:34px 0 36px;}
+    .hero .lead{font-size:15px;}
+    section{padding:38px 0;}
+    .grid{grid-template-columns:1fr;}
+    .schedule{grid-template-columns:1fr;}
+    .article{padding:24px 20px;}
+    .list-card{padding:20px;}
+    .btn-primary,.btn-ghost{padding:11px 20px;font-size:14px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="樱花动漫 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#fbe4ec"/>
+        <g fill="#e8618c">
+          <ellipse cx="32" cy="25" rx="6" ry="10"/>
+          <ellipse cx="32" cy="25" rx="10" ry="6"/>
+          <ellipse cx="20" cy="34" rx="5" ry="8" transform="rotate(-40 20 34)"/>
+          <ellipse cx="44" cy="34" rx="5" ry="8" transform="rotate(40 44 34)"/>
+        </g>
+        <circle cx="32" cy="26" r="3.5" fill="#fff3f7"/>
+      </svg>
+      樱花动漫
+    </a>
+    <ul>
+      <li><a href="#catalog">番剧目录</a></li>
+      <li><a href="#schedule">更新表</a></li>
+      <li><a href="#picks">编辑推荐</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+    <a class="btn-watch" href="#catalog">开始追番</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>樱花动漫</h1>
+        <p class="lead">
+          樱花动漫为动画爱好者整理了一份可翻阅的番剧清单：按题材、季度与热度分类，标注更新节奏与集数状态。无论你是想找一部下饭的日常番，还是补完上一季度的口碑作品，都可以从目录直接进入对应的播放列表。
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="#catalog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            进入番剧目录
+          </a>
+          <a class="btn-ghost" href="#schedule">查看本周更新</a>
+        </div>
+        <div class="hero-stats">
+          <span>按季度归档</span>
+          <span>题材标签筛选</span>
+          <span>每集时长标注</span>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="樱花与屏幕的追番插画">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff6fa"/>
+              <stop offset="1" stop-color="#fbe4ec"/>
+            </linearGradient>
+          </defs>
+          <rect width="360" height="240" rx="18" fill="url(#sky)"/>
+          <rect x="70" y="52" width="220" height="132" rx="12" fill="#fff" stroke="#f0dbe3" stroke-width="2"/>
+          <rect x="78" y="60" width="204" height="104" rx="8" fill="#fdf1f5"/>
+          <polygon points="150,92 150,144 196,118" fill="#e8618c"/>
+          <rect x="78" y="172" width="204" height="6" rx="3" fill="#f0dbe3"/>
+          <circle cx="150" cy="128" r="46" fill="#e8618c" opacity=".07"/>
+          <g fill="#f6a8c1">
+            <ellipse cx="52" cy="42" rx="7" ry="4" transform="rotate(-25 52 42)"/>
+            <ellipse cx="312" cy="66" rx="7" ry="4" transform="rotate(20 312 66)"/>
+            <ellipse cx="40" cy="178" rx="6" ry="3.6" transform="rotate(30 40 178)"/>
+            <ellipse cx="326" cy="190" rx="6" ry="3.6" transform="rotate(-18 326 190)"/>
+            <ellipse cx="286" cy="30" rx="5" ry="3" transform="rotate(12 286 30)"/>
+          </g>
+          <g fill="#e8618c" opacity=".5">
+            <circle cx="96" cy="34" r="3"/>
+            <circle cx="268" cy="204" r="3"/>
+            <circle cx="60" cy="112" r="2.4"/>
+          </g>
+        </svg>
+        <figcaption>番剧画面示意 · 樱花动漫目录页</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CATALOG ============ -->
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Catalog</div>
+        <h2>番剧目录：按题材挑一部想看的</h2>
+        <p>目录按题材分组，每部作品标注类型、篇幅与更新状态。点击下方标签即可筛选，卡片内容为静态条目，方便先了解再决定是否加入列表。</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="番剧题材筛选">
+        <button type="button" class="on" data-filter="all">全部</button>
+        <button type="button" data-filter="daily">日常治愈</button>
+        <button type="button" data-filter="battle">热血战斗</button>
+        <button type="button" data-filter="mystery">悬疑推理</button>
+        <button type="button" data-filter="youth">青春校园</button>
+      </div>
+
+      <div class="grid" id="cardGrid">
+        <article class="card" data-cat="daily">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><path d="M22 40c4-10 16-10 20 0" stroke="#e8618c" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="25" cy="28" r="2.6" fill="#e8618c"/><circle cx="39" cy="28" r="2.6" fill="#e8618c"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">日常治愈 · 12 集</div>
+            <h3>午后面包房</h3>
+            <p>小镇面包房的一天从烤炉开始，四个女孩用点心交换彼此的心事，节奏缓慢，适合睡前观看。</p>
+            <span class="tag">已完结</span>
+          </div>
+        </article>
+
+        <article class="card" data-cat="battle">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><path d="M20 44 44 20M38 20h6v6M26 44h-6v-6" stroke="#e8618c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">热血战斗 · 24 集</div>
+            <h3>赤刃少年</h3>
+            <p>少年在剑术大会上连败三场，却因一次意外的旧剑认主重新站上擂台，动作场面为分镜重点。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+
+        <article class="card" data-cat="mystery">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><circle cx="29" cy="29" r="10" fill="none" stroke="#e8618c" stroke-width="3"/><path d="M37 37l9 9" stroke="#e8618c" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">悬疑推理 · 13 集</div>
+            <h3>雾港档案</h3>
+            <p>一桩旧案牵出海港小城的连环失踪，记者与退休警探联手翻查十年前的口供，每集收束一个疑点。</p>
+            <span class="tag">已完结</span>
+          </div>
+        </article>
+
+        <article class="card" data-cat="youth">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><path d="M14 44c6-8 12-8 18 0s12 8 18 0" stroke="#e8618c" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="32" cy="24" r="6" fill="#e8618c"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">青春校园 · 12 集</div>
+            <h3>第七节自习课</h3>
+            <p>转学生加入濒临解散的广播社，用每周一次的午间放送串联起班级里被忽略的小事。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+
+        <article class="card" data-cat="daily">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><path d="M18 36h28M24 30h16" stroke="#e8618c" stroke-width="3" stroke-linecap="round"/><rect x="20" y="40" width="24" height="8" rx="4" fill="#e8618c" opacity=".35"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">日常治愈 · 6 集</div>
+            <h3>猫咪与旧书店</h3>
+            <p>短篇合集，每集讲述一位客人带着旧书来换一段记忆，画面以暖色室内场景为主。</p>
+            <span class="tag">已完结</span>
+          </div>
+        </article>
+
+        <article class="card" data-cat="battle">
+          <div class="thumb">
+            <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#fbe4ec"/><path d="M32 16l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#e8618c" opacity=".8"/></svg>
+          </div>
+          <div class="body">
+            <div class="meta">热血战斗 · 26 集</div>
+            <h3>星环机甲</h3>
+            <p>轨道殖民地之间的资源战，驾驶舱视角与机体设计是看点，主线穿插小队成员的过往。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+      </div>
+      <div class="empty-tip" id="emptyTip">该题材下暂无可显示的条目，可切换其他标签查看。</div>
+    </div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section id="schedule" style="background:linear-gradient(180deg,#fff,#fff6fa);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Weekly</div>
+        <h2>本周更新表</h2>
+        <p>以周一至周四为示例展示更新节奏，时间为常规放送时段。实际更新时间以各作品页面标注为准，表中的集数为示意。</p>
+      </div>
+      <div class="schedule">
+        <div class="day">
+          <h3>周一</h3>
+          <ul>
+            <li>午后面包房 <em>第 9 集</em></li>
+            <li>雾港档案 <em>第 11 集</em></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h3>周二</h3>
+          <ul>
+            <li>赤刃少年 <em>第 18 集</em></li>
+            <li>猫咪与旧书店 <em>第 5 集</em></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h3>周三</h3>
+          <ul>
+            <li>第七节自习课 <em>第 7 集</em></li>
+            <li>星环机甲 <em>第 20 集</em></li>
+          </ul>
+        </div>
+        <div class="day">
+          <h3>周四</h3>
+          <ul>
+            <li>赤刃少年 <em>第 19 集</em></li>
+            <li>雾港档案 <em>第 12 集</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PICKS ============ -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Picks</div>
+        <h2>编辑推荐与观看建议</h2>
+        <p>从目录中挑选几部不同类型的作品，按观看场景给出建议，帮助你在有限时间里做出选择。</p>
+      </div>
+      <div class="picks">
+        <div class="article">
+          <h2>从哪一部开始看？</h2>
+          <p>樱花动漫的目录并不追求条目数量，而是把每部作品的类型、篇幅和节奏讲清楚。如果你只有零散时间，优先考虑 6 至 13 集的短篇；如果你习惯一次看完一条主线，24 集以上的连载作品更适合周末集中补番。</p>
+          <h3>日常治愈类：低压力首选</h3>
+          <p>《午后面包房》与《猫咪与旧书店》都以单集小故事推进，不依赖连续剧情，中途暂停也不影响理解。画面以室内暖色为主，适合作为工作日的放松选择。</p>
+          <h3>热血战斗类：关注分镜与节奏</h3>
+          <p>《赤刃少年》的看点集中在擂台段落，前几集铺垫较慢，建议从第 4 集开始观察动作设计。《星环机甲》则更侧重机体设定与团队配合，适合喜欢硬核设定的观众。</p>
+          <h3>悬疑与校园：跟着线索走</h3>
+          <p>《雾港档案》每集收束一个疑点，适合连续观看；《第七节自习课》以广播社的日常串联，单集独立性强，可以按兴趣跳看。两类作品在樱花动漫目录中都标注了集数，便于安排时间。</p>
+        </div>
+
+        <aside class="list-card">
+          <h2>本周关注榜</h2>
+          <p class="sub">依据目录内条目的标注热度排序，仅作浏览顺序建议。</p>
+          <ol>
+            <li>
+              <div><b>赤刃少年</b><span>更新至第 19 集，擂台主线进入高潮</span></div>
+            </li>
+            <li>
+              <div><b>星环机甲</b><span>机体设定集同步更新，适合设定党</span></div>
+            </li>
+            <li>
+              <div><b>雾港档案</b><span>旧案口供出现矛盾，第 12 集收束</span></div>
+            </li>
+            <li>
+              <div><b>第七节自习课</b><span>广播社首次校外放送，节奏轻快</span></div>
+            </li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section>
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>下载樱花动漫番剧清单</h2>
+          <p>把当前目录整理成离线清单，包含作品名称、类型、集数与更新状态，方便在没有网络时翻阅。清单会随目录更新重新生成，下载入口将在文件准备好后开放。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 19h14"/><path d="M12 3v10m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" style="padding-top:12px;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于樱花动漫的常见问题</h2>
+        <p>整理访客最常问的几个问题，说明目录的使用方式与信息范围。</p>
+      </div>
+      <div class="faq">
+        <div>
+          <h3>目录里的作品信息从哪里来？</h3>
+          <p>条目信息按题材、集数与更新状态整理，来源为公开的番剧资料。页面不提供资源文件，仅作为浏览与选择的参考。</p>
+        </div>
+        <div>
+          <h3>怎样快速找到想看的类型？</h3>
+          <p>使用番剧目录上方的题材标签筛选，或直接浏览卡片上的类型标注。筛选结果只保留对应条目，切回“全部”可恢复完整列表。</p>
+        </div>
+        <div>
+          <h3>更新表的时间是固定的吗？</h3>
+          <p>更新表按周一到周四展示示例节奏，具体放送时间以作品页面为准。集数为示意，用于说明连载进度，不代表最终播出安排。</p>
+        </div>
+        <div>
+          <h3>下载入口现在可以使用吗？</h3>
+          <p>番剧清单文件尚在准备中，下载入口暂为占位状态，文件就绪后会替换为实际地址。届时清单内容与页面目录保持一致。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#fbe4ec"/>
+            <g fill="#e8618c">
+              <ellipse cx="32" cy="25" rx="6" ry="10"/>
+              <ellipse cx="32" cy="25" rx="10" ry="6"/>
+              <ellipse cx="20" cy="34" rx="5" ry="8" transform="rotate(-40 20 34)"/>
+              <ellipse cx="44" cy="34" rx="5" ry="8" transform="rotate(40 44 34)"/>
+            </g>
+            <circle cx="32" cy="26" r="3.5" fill="#fff3f7"/>
+          </svg>
+          樱花动漫
+        </a>
+        <p style="margin-top:12px;">樱花动漫是一个番剧浏览与追番入口，提供题材分类、季度归档与更新节奏参考，帮助动画爱好者用更少时间找到合适的作品。</p>
+      </div>
+      <nav aria-label="页脚导航">
+        <a href="#catalog">番剧目录</a>
+        <a href="#schedule">更新表</a>
+        <a href="#picks">编辑推荐</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="copyright">© 樱花动漫 · 页面内容仅作番剧浏览与选择参考</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filter-bar button');
+    var cards = document.querySelectorAll('#cardGrid .card');
+    var tip = document.getElementById('emptyTip');
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.remove('on'); });
+        btn.classList.add('on');
+        var key = btn.getAttribute('data-filter');
+        var visible = 0;
+        cards.forEach(function (card) {
+          var match = key === 'all' || card.getAttribute('data-cat') === key;
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+        tip.classList.toggle('show', visible === 0);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
