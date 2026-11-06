@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘密官网-秘密官网入口_秘密官网首页与访问指引</title>
+<meta name="description" content="秘密官网首页，提供秘密官网入口说明、栏目导航与常见访问问题解答，帮助你快速找到秘密官网的正式入口与内容分区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a2b'/%3E%3Cpath d='M20 26h24a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V30a4 4 0 0 1 4-4z' fill='none' stroke='%23e8b64c' stroke-width='3'/%3E%3Cpath d='M24 26v-4a8 8 0 0 1 16 0v4' fill='none' stroke='%23e8b64c' stroke-width='3'/%3E%3Ccircle cx='32' cy='36' r='3' fill='%23e8b64c'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#161a2b;
+    --ink-2:#232a44;
+    --paper:#f7f5f0;
+    --card:#ffffff;
+    --gold:#c8963c;
+    --gold-soft:#e8b64c;
+    --muted:#6b7080;
+    --line:#e3ded4;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+  /* header */
+  header.site{
+    background:var(--ink);
+    color:#f2efe8;
+    border-bottom:1px solid #2c3350;
+  }
+  .bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:16px 0;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  .brand svg{flex:0 0 auto;}
+  .brand .name{
+    font-size:19px;font-weight:700;letter-spacing:.5px;color:#fff;
+  }
+  nav.main ul{
+    list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap;
+  }
+  nav.main a{
+    display:block;padding:6px 12px;border-radius:6px;
+    text-decoration:none;font-size:14.5px;color:#d9d5cb;
+    transition:background .18s,color .18s;
+  }
+  nav.main a:hover{background:#2a3150;color:#fff;}
+
+  /* hero */
+  .hero{
+    background:linear-gradient(160deg,#1b2138 0%,#232a44 60%,#2b3350 100%);
+    color:#f4f1ea;
+    padding:56px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;
+    width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,182,76,.22),transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.35fr .95fr;gap:44px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .kicker{
+    display:inline-block;font-size:12.5px;letter-spacing:2px;
+    color:var(--gold-soft);border:1px solid rgba(232,182,76,.45);
+    padding:3px 10px;border-radius:20px;margin-bottom:18px;
+  }
+  h1{
+    font-size:38px;line-height:1.25;margin:0 0 16px;font-weight:800;
+    letter-spacing:1px;
+  }
+  .hero p.lead{
+    margin:0 0 26px;color:#cfd3e0;font-size:16.5px;max-width:34em;
+  }
+  .actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;text-decoration:none;font-size:15px;
+    padding:11px 22px;border-radius:8px;font-weight:600;
+    transition:transform .15s,background .18s,border-color .18s;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-gold{background:var(--gold-soft);color:#221a06;}
+  .btn-gold:hover{background:#f0c25c;}
+  .btn-ghost{background:transparent;color:#eae6dc;border:1px solid #4a5275;}
+  .btn-ghost:hover{border-color:#7d86ad;}
+
+  .hero-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:22px 22px 18px;
+  }
+  .hero-card h2{
+    font-size:14px;margin:0 0 14px;letter-spacing:1px;
+    color:var(--gold-soft);font-weight:600;
+  }
+  .hero-card ul{margin:0;padding:0;list-style:none;font-size:14.5px;}
+  .hero-card li{
+    display:flex;gap:10px;padding:8px 0;color:#d5d9e6;
+    border-bottom:1px dashed rgba(255,255,255,.1);
+  }
+  .hero-card li:last-child{border-bottom:0;}
+  .dot{flex:0 0 6px;height:6px;margin-top:9px;border-radius:50%;background:var(--gold-soft);}
+
+  /* sections */
+  section.band{padding:52px 0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head h2{
+    font-size:24px;margin:0 0 8px;font-weight:700;letter-spacing:.5px;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:15px;max-width:60em;}
+
+  .grid-3{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 20px;
+  }
+  .card .icon{
+    width:36px;height:36px;border-radius:9px;background:#faf3e2;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .card h3{font-size:16.5px;margin:0 0 8px;font-weight:700;}
+  .card p{margin:0;font-size:14.5px;color:#4d5262;}
+
+  /* article-like */
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:32px 34px;
+  }
+  .panel p{margin:0 0 16px;color:#3c4152;font-size:15.5px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel strong{color:var(--ink);}
+
+  .two-col{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;
+  }
+  .aside-box{
+    background:#fbf8f1;border:1px solid var(--line);border-radius:12px;padding:22px;
+  }
+  .aside-box h3{margin:0 0 12px;font-size:15.5px;}
+  .aside-box ul{margin:0;padding-left:18px;font-size:14.5px;color:#4d5262;}
+  .aside-box li{margin-bottom:7px;}
+
+  /* faq */
+  .faq details{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:16px 20px;margin-bottom:12px;
+  }
+  .faq summary{
+    cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";color:var(--gold);font-size:19px;font-weight:700;line-height:1;
+  }
+  .faq details[open] summary::after{content:"–";}
+  .faq details p{margin:12px 0 0;font-size:14.5px;color:#4d5262;}
+
+  /* cta */
+  .cta{
+    background:var(--ink);color:#f2efe8;border-radius:16px;
+    padding:38px 36px;display:flex;justify-content:space-between;
+    align-items:center;gap:26px;flex-wrap:wrap;
+  }
+  .cta h2{margin:0 0 8px;font-size:22px;}
+  .cta p{margin:0;color:#c3c8d8;font-size:15px;max-width:44em;}
+
+  /* footer */
+  footer.site{
+    background:#10131f;color:#9aa0b3;margin-top:56px;
+    padding:34px 0 28px;font-size:14px;
+  }
+  footer .frow{
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    align-items:flex-start;
+  }
+  footer .frow nav{display:flex;gap:18px;flex-wrap:wrap;}
+  footer a{text-decoration:none;color:#b8bdcd;}
+  footer a:hover{color:#fff;}
+  footer .note{
+    margin-top:20px;padding-top:16px;border-top:1px solid #222839;
+    color:#787e92;font-size:13px;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .two-col{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    h1{font-size:28px;}
+    .hero{padding:40px 0 44px;}
+    .grid-3{grid-template-columns:1fr;}
+    .panel{padding:24px 20px;}
+    .cta{padding:28px 22px;}
+    .bar{padding:14px 0;}
+    nav.main a{padding:5px 9px;font-size:14px;}
+    section.band{padding:40px 0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="秘密官网首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="6" y="6" width="52" height="52" rx="13" fill="#232a44" stroke="#e8b64c" stroke-width="2"/>
+        <rect x="18" y="27" width="28" height="19" rx="4" fill="none" stroke="#e8b64c" stroke-width="3"/>
+        <path d="M24 27v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#e8b64c" stroke-width="3"/>
+        <circle cx="32" cy="36" r="3" fill="#e8b64c"/>
+      </svg>
+      <span class="name">秘密官网</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#intro">站点说明</a></li>
+        <li><a href="#channels">内容分区</a></li>
+        <li><a href="#access">访问路径</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">SECRET · 官方首页</span>
+        <h1>秘密官网</h1>
+        <p class="lead">秘密官网是本页所呈现的主题站点首页。这里集中说明秘密官网的入口位置、内容分区与访问方式，让你在一页之内看清秘密官网有哪些栏目、从何处进入，以及遇到打不开页面时应当先检查什么。</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#channels">查看内容分区</a>
+          <a class="btn btn-ghost" href="#access">了解访问路径</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="首页要点">
+        <h2>本站能提供什么</h2>
+        <ul>
+          <li><span class="dot"></span><span>秘密官网的入口说明与栏目导航</span></li>
+          <li><span class="dot"></span><span>各内容分区的用途与阅读顺序</span></li>
+          <li><span class="dot"></span><span>地址打不开时的排查思路</span></li>
+          <li><span class="dot"></span><span>访问中常见疑问的集中答复</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于秘密官网</h2>
+        <p>用一段话说明这个首页的定位，避免访客在入口与内容之间反复试探。</p>
+      </div>
+      <div class="panel">
+        <p>很多访客第一次搜索秘密官网时，真正想确认的并不是“它叫什么”，而是“从哪里进、进去之后能看到什么”。因此本页把秘密官网拆成三件事来讲：入口在哪、内容怎么分区、访问不畅时怎么办。三部分互相衔接，读完即可完成一次完整的访问判断。</p>
+        <p><strong>秘密官网</strong>在这里被当作一个整体主题来组织内容，页面上的栏目名称、说明文字与操作入口都与这一主题保持一致。我们不夸大功能，也不承诺任何未经验证的服务能力；页面上出现的每一条说明，都对应你可以在本站点内直接点击到达的位置。</p>
+        <p>如果你只是想要一个可靠的起点，可以直接从下方的内容分区开始浏览；如果你已经知道自己要做什么，也可以跳到访问路径一节，那里按“打开—确认—排查”的顺序列出了具体步骤。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="channels">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>内容分区</h2>
+        <p>秘密官网的首页信息按用途分为三块，各自承担不同的阅读任务。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8963c" stroke-width="2" stroke-linecap="round">
+              <path d="M4 6h16M4 12h10M4 18h13"/>
+            </svg>
+          </div>
+          <h3>入口与导航</h3>
+          <p>说明秘密官网首页的栏目结构与跳转逻辑，帮助访客建立整体印象，明确首页各锚点分别通向哪类内容。</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8963c" stroke-width="2" stroke-linecap="round">
+              <rect x="4" y="4" width="16" height="16" rx="3"/>
+              <path d="M8 9h8M8 13h5"/>
+            </svg>
+          </div>
+          <h3>内容说明</h3>
+          <p>对秘密官网各分区的用途作文字交代，让访客在点击之前就知道会看到什么，减少无效跳转与重复返回。</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8963c" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="8"/>
+              <path d="M12 8v4l3 2"/>
+            </svg>
+          </div>
+          <h3>访问支持</h3>
+          <p>汇总访问秘密官网时可能遇到的情况与对应处理方式，包括页面加载缓慢、链接失效等常见场景的初步判断。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="access">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>访问路径</h2>
+        <p>按顺序完成三步，多数访问问题可以在本站内先排除一半。</p>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <p><strong>第一步，确认当前所在页面。</strong>你现在阅读的是秘密官网首页，页面顶部与页尾都标有同一品牌名称，可通过地址栏与页面标识是否一致来确认没有进入仿冒页面。这一步看似简单，却能过滤掉相当一部分误入的情况。</p>
+          <p><strong>第二步，从导航进入目标分区。</strong>秘密官网首页的导航栏固定提供“站点说明、内容分区、访问路径、常见问题”四个入口，点击后在本页内跳转，不会打开新的窗口，也不会要求填写任何信息。</p>
+          <p><strong>第三步，遇到异常时逐项排查。</strong>先刷新页面，再检查网络连接是否正常，随后更换浏览器重试。若页面结构与本文描述基本一致但个别区块未显示，通常是加载未完成，稍等片刻或重新载入即可。若页面整体与描述明显不符，则建议先关闭页面，不要在该页面输入任何内容。</p>
+          <p>需要说明的是，秘密官网的栏目与内容会随站点维护而调整，本页所描述的结构以你当前看到的版本为准。页面上的文字说明与锚点均指向本页实际存在的区块，不存在点了没有反应的装饰性链接。</p>
+        </div>
+        <aside class="aside-box">
+          <h3>访问前可先自查</h3>
+          <ul>
+            <li>当前地址是否与页面品牌一致</li>
+            <li>导航四个入口是否都能正常跳转</li>
+            <li>页面是否加载完全，图片与图标是否显示</li>
+            <li>是否被要求填写与本主题无关的信息</li>
+            <li>浏览器是否为近期版本</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>关于秘密官网首页的几类高频疑问，集中答复如下。</p>
+      </div>
+
+      <details open>
+        <summary>秘密官网首页主要解决什么问题？</summary>
+        <p>它把入口、分区与排查三件事放在同一页里，让访客不必在多个页面之间来回切换。首页本身不承载具体业务操作，作用是建立对秘密官网的整体认识并给出明确的下一步。</p>
+      </details>
+
+      <details>
+        <summary>页面上的导航链接会跳到外部吗？</summary>
+        <p>不会。导航的四个入口均指向本页内实际存在的区块，点击后在本页内滚动定位。页面中未设置任何指向未知域名的跳转。</p>
+      </details>
+
+      <details>
+        <summary>为什么有的区块显示较慢？</summary>
+        <p>首页包含内嵌图标与渐变背景，在弱网环境下渲染会稍慢。若正文已出现而装饰元素尚未显示，不影响阅读，等待加载完成或刷新一次即可。</p>
+      </details>
+
+      <details>
+        <summary>发现页面内容与描述不一致怎么办？</summary>
+        <p>请先核对地址栏与页面品牌名称是否一致。若明显不符，建议直接关闭页面，不要继续操作。正常情况下，秘密官网首页的结构与本文描述应当基本对应。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>从内容分区开始了解秘密官网</h2>
+          <p>如果你已经读过入口说明，可以直接前往内容分区，按用途找到自己关心的部分；也可以回到访问路径，按三步顺序逐项确认。</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-gold" href="#channels">前往内容分区</a>
+          <a class="btn btn-ghost" href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <strong style="color:#e8e5dd;">秘密官网</strong>
+        <div style="margin-top:6px;color:#787e92;">主题首页 · 入口说明与内容导航</div>
+      </div>
+      <nav aria-label="页尾导航">
+        <a href="#intro">站点说明</a>
+        <a href="#channels">内容分区</a>
+        <a href="#access">访问路径</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="note">本页为秘密官网主题首页，内容用于说明页面结构、栏目用途与访问步骤，具体信息以你当前访问的页面版本为准。</div>
+  </div>
+</footer>
+
+</body>
+</html>
